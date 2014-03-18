@@ -4,7 +4,6 @@ ruby '2.1.0'
 gem 'rails', '4.0.3'
 
 gem 'thin', '~> 1.6.2'
-gem 'sqlite3', '~> 1.3.9'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer', '~> 0.12.1'
@@ -34,8 +33,8 @@ group :development do
   gem 'rack-livereload', '~> 0.3.15'
   gem 'quiet_assets', '~> 1.0.2'
   gem 'better_errors', '~> 1.1.0'
-  gem 'guard-rspec', '~> 4.2.2'
   gem 'rb-fsevent', '~> 0.9.4' if `uname` =~ /Darwin/
+  gem 'heroku'
 end
 
 group :development, :test do
@@ -49,4 +48,12 @@ group :development, :test do
   gem 'pry', '~> 0.9.12.6'
   gem 'pry-debugger', '~> 0.2.2'
   gem 'binding_of_caller', '~> 0.7.2'
+
+end
+group :production do
+  gem 'rails_12factor'
+end
+
+group :test , :production do
+  gem 'pg'
 end
