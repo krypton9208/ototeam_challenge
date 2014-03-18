@@ -3,7 +3,7 @@
   %h1= t('.title')
 
 = search_form_for search, wrapper: :search_form do |f|
-  = f.input :name_or_description, placeholder: t('.search_form.name_or_description_contains'), wrapper_html: { class: 'col-sm-4' }
+  = f.input :name_or_description_cont, placeholder: t('.search_form.name_or_description_contains'), wrapper_html: { class: 'col-sm-4' }
   = f.input :start_at_gt, placeholder: t('.search_form.starts_after'), as: :datetime_picker, wrapper_html: { class: 'col-sm-3' }
   = f.input :start_at_lt, placeholder: t('.search_form.starts_before'), as: :datetime_picker, wrapper_html: { class: 'col-sm-3' }
   .form-group

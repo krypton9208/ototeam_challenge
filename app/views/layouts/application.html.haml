@@ -38,7 +38,7 @@
               %li
                 = link_to t('.profile'), edit_user_registration_path
               %li
-              = link_to t('.logout'), destroy_user_session_path, method: :delete
+                = link_to t('.logout'), destroy_user_session_path, method: :delete
     .container
       = render 'shared/flash_messages'
       = yield

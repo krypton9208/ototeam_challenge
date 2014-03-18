@@ -1,1 +1,1 @@
-ActionController::Parameters.permit_all_parameters = true
+ActionController::Parameters.permit_all_parameters = false

@@ -6,6 +6,8 @@ class Event < ActiveRecord::Base
   before_validation :fill_invite_from, unless: :invite_from
   before_validation :fill_invite_to, unless: :invite_to
   validates :name, :start_at, :minutes_for_answer, presence: true
+  validates :attendees_min_count, :attendees_max_count, presence: true
+  validate :attendances_is_correct
   validate :timeline_is_correct, if: :start_at
 
   def attendees_count
@@ -25,4 +27,9 @@ class Event < ActiveRecord::Base
   def timeline_is_correct
     errors.add(:base, :invalid_dates_order) if invite_from >= invite_to or invite_to > start_at
   end
+
+  def attendances_is_correct
+    errors.add(:base, 'Wrong numbers of attendances') if self.attendees_max_count < self.attendees_min_count or self.attendees_max_count <=0 or self.attendees_min_count <= 0
+  end
+
 end

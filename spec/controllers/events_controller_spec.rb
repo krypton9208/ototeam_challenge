@@ -3,7 +3,6 @@ require 'spec_helper'
 describe EventsController do
   let(:user) { create(:user) }
   before { sign_in user }
-
   describe '#index' do
     context 'one event exists' do
       let!(:event) { create(:event, creator: user) }

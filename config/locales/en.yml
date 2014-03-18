@@ -93,3 +93,4 @@ en:
   devise:
     registrations:
       cancel_account: "Cancel my account"
+  invalid_att_num: "invalid_att_num"

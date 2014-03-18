@@ -19,6 +19,7 @@ class FriendsController < AuthenticatedUser
       render action: 'edit'
     end
   end
+  #dasda
 
   def destroy
     friend.destroy

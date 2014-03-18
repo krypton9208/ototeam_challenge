@@ -29,6 +29,6 @@ class EventsController < AuthenticatedUser
   private
 
   def event_params
-    params.require(:event).permit(:state, :name, :start_at, :invite_from, :invite_to, :attendees_min_count, :attendees_max_count, :minutes_for_answer, :public_attendees_list)
+    params.require(:event).permit(:state,:name,:description, :start_at, :invite_from, :invite_to, :attendees_min_count, :attendees_max_count, :minutes_for_answer, :public_attendees_list)
   end
 end

@@ -6,8 +6,9 @@ class Friend < ActiveRecord::Base
   has_many :attendances
   has_many :events, through: :attendances
 
-  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }, allow_blank: true
-  validate :has_email_or_phone, unless: :user
+  validate :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }, allow_blank: true
+  validate :phone, format: { with: /\d{3}-\d{3}-\d{4}/, message: "bad format" },allow_blank: true
+  validate :has_email_or_phone, allow_blank: true, unless: :user
 
   def group_names
     groups.map(&:name).to_sentence
@@ -24,6 +25,9 @@ class Friend < ActiveRecord::Base
   private
 
   def has_email_or_phone
-    errors.add(:base, :empty_phone_and_email) if email.blank? or phone.blank?
+    if email.blank? and phone.blank?
+      errors.add(:base, :empty_phone_and_email)
+
+    end
   end
 end

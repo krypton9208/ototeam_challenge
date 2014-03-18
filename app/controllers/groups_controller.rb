@@ -6,7 +6,7 @@ class GroupsController < AuthenticatedUser
 
   def create
     if group.save
-      redirect_to group, notice: t('groups.create.succcess')
+      redirect_to group, notice: t('groups.create.success')
     else
       render action: 'new'
     end

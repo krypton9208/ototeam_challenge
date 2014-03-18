@@ -26,6 +26,7 @@ gem 'rails-i18n', '~> 4.0.1'
 gem 'decent_exposure', '~> 2.3.1'
 gem 'draper', '~> 1.3.0'
 
+
 group :development do
   gem 'guard-rails', '~> 0.5.0'
   gem 'guard-bundler', '~> 2.0.0'
@@ -33,6 +34,7 @@ group :development do
   gem 'rack-livereload', '~> 0.3.15'
   gem 'quiet_assets', '~> 1.0.2'
   gem 'better_errors', '~> 1.1.0'
+  gem 'guard-rspec', '~> 4.2.2'
   gem 'rb-fsevent', '~> 0.9.4' if `uname` =~ /Darwin/
 end
 
@@ -41,9 +43,9 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.4.0'
   gem 'ffaker', '~> 1.23.0'
   gem 'spring-commands-rspec', '~> 1.0.1'
-  gem 'guard-rspec', '~> 4.2.2'
   gem 'rspec-collection_matchers', '~> 0.0.3'
   gem 'rspec-its', '~> 1.0.0'
+  gem 'guard-rspec', '~> 4.2.2'
   gem 'pry', '~> 0.9.12.6'
   gem 'pry-debugger', '~> 0.2.2'
   gem 'binding_of_caller', '~> 0.7.2'

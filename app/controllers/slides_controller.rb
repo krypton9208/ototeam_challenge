@@ -2,7 +2,7 @@ class SlidesController < ApplicationController
   layout 'remark'
 
   def index
-    throw "test!!"
+    #throw "test!!"
     @available_slide_files = available_slide_files
   end
 

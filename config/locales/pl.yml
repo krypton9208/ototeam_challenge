@@ -79,7 +79,7 @@ pl:
       title: "Lista spotkań"
       search_form:
         name_or_description_contains: "Nazwa lub opis zawiera"
-        starts_after: "Zaczyna się po"
+        starts_after: "Zaczyna się po"
         starts_before: "Zaczyna się przed"
     new:
       title: "Nowe spotkanie"
