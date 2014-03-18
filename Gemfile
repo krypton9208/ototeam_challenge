@@ -48,6 +48,7 @@ group :development, :test do
   gem 'pry', '~> 0.9.12.6'
   gem 'pry-debugger', '~> 0.2.2'
   gem 'binding_of_caller', '~> 0.7.2'
+  gem 'sqlite3'
 
 end
 group :production do

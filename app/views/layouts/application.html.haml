@@ -29,11 +29,13 @@
           .collapse.navbar-collapse
             %ul.nav.navbar-nav
               %li.active
+              %li{:class => controller_name == 'events' && :active}
                 = link_to t('.events'), events_path
-              %li
+              %li{:class => controller_name == 'friends' && :active}
                 = link_to t('.friends'), friends_path
-              %li
+              %li{:class => controller_name == 'groups' && :active}
                 = link_to t('.groups'), groups_path
+
             %ul.nav.navbar-nav.navbar-right
               %li
                 = link_to t('.profile'), edit_user_registration_path
